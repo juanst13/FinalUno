@@ -34,51 +34,25 @@ namespace FinalUno.Pages
 
         public TokenResponse tokenResponse { get; set; }
 
-        /*protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
             tokenResponse = (TokenResponse)e.Parameter;
-            LoadVoteAsync();
             WelcomeTextBlock.Text = $"Bienvenid@: {tokenResponse.User.Name}";
 
         }
 
-        private async void LoadVoteAsync()
-        {
-            Loader loader = new Loader("Por favor espere...");
-            loader.Show();
-            Response response = await ApiService.GetListAsync<QuestionResponse>("Questions", tokenResponse.Token);
-            loader.Close();
-
-            if (!response.IsSuccess)
-            {
-                MessageDialog dialog = new MessageDialog(response.Message, "Error");
-                await dialog.ShowAsync();
-                return;
-            }
-
-            QuestionResponse questionResponse = (QuestionResponse)response.Result;
-            QuestionTextBlock.Text = $"{questionResponse.Description}";
-            Option1TextBlock.Text = $"{questionResponse.Options[0]}";
-            Option2TextBlock.Text = $"{questionResponse.Options[1]}";
-            Option3TextBlock.Text = $"{questionResponse.Options[2]}";
-            Option4TextBlock.Text = $"{questionResponse.Options[3]}";
-
-        }
-
-        private async void DeleteImage_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void DeleteImage_Tapped(object sender, RoutedEventArgs e)
         {
             ContentDialogResult result = await ConfirmDeleteAsync();
             if (result != ContentDialogResult.Primary)
             {
-                Frame.Navigate(typeof(LoginPage));
                 return;
             }
 
             Loader loader = new Loader("Por favor espere...");
             loader.Show();
-            Customer customer = Customers[CustomersListView.SelectedIndex];
-            Response response = await ApiService.DeleteAsync("Answers", customer.Id, tokenResponse.Token);
+            Response response = await ApiService.DeleteAsync("Answers", tokenResponse.Token);
             loader.Close();
 
             if (!response.IsSuccess)
@@ -88,10 +62,9 @@ namespace FinalUno.Pages
                 return;
             }
 
-            List<Customer> customers = Customers.Where(c => c.Id != customer.Id).ToList();
-            Customers = new ObservableCollection<Customer>(customers);
-            RefreshList();
-        }*/
+            Frame.Navigate(typeof(LoginPage));
+
+        }
 
         private async Task<ContentDialogResult> ConfirmDeleteAsync()
         {

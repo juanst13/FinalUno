@@ -56,6 +56,7 @@ namespace FinalUno
             Loader loader = new Loader("Por favor espere...");
             loader.Show();
             Response response = await ApiService.GetListAsync<QuestionResponse>("Questions", tokenResponse.Token);
+            Response responses = await ApiService.GetListAsync<Option>("Questions", tokenResponse.Token);
             loader.Close();
 
             if (!response.IsSuccess)
@@ -67,20 +68,51 @@ namespace FinalUno
 
             QuestionResponse questionResponse = (QuestionResponse)response.Result;
             QuestionTextBlock.Text = $"{questionResponse.Description}";
-            Option1TextBlock.Text = $"{questionResponse.Options[0]}";
-            Option2TextBlock.Text = $"{questionResponse.Options[1]}";
-            Option3TextBlock.Text = $"{questionResponse.Options[2]}";
-            Option4TextBlock.Text = $"{questionResponse.Options[3]}";
+            Option1TextBlock.Text = $"{questionResponse.Options[0].Description}";
+            Option2TextBlock.Text = $"{questionResponse.Options[1].Description}";
+            Option3TextBlock.Text = $"{questionResponse.Options[2].Description}";
+            Option4TextBlock.Text = $"{questionResponse.Options[3].Description}";
 
         }
 
         private async void AButton_Click(object sender, RoutedEventArgs e)
         {
+            Loader loader = new Loader("Por favor espere...");
+            loader.Show();
             Response response = await ApiService.PostAsync("Questions", new QuestionRequest
             {
                 QuestionId = 1,
                 OptionId = 1
             }, tokenResponse.Token);
+            loader.Close();
+
+            if (!response.IsSuccess)
+            {
+                MessageDialog dialog = new MessageDialog(response.Message, "Error");
+                await dialog.ShowAsync();
+                if (response.Message == "Usuario ya votó.")
+                {
+                    Frame.Navigate(typeof(VotedPage), tokenResponse);
+                }
+                return;
+            }
+
+            MessageDialog messageDialog;
+            messageDialog = new MessageDialog("Su voto ha sido registrado con éxito.", "Ok");
+            await messageDialog.ShowAsync();
+
+        }
+
+        private async void BButton_Click(object sender, RoutedEventArgs e)
+        {
+            Loader loader = new Loader("Por favor espere...");
+            loader.Show();
+            Response response = await ApiService.PostAsync("Questions", new QuestionRequest
+            {
+                QuestionId = 1,
+                OptionId = 2
+            }, tokenResponse.Token);
+            loader.Close();
 
             if (!response.IsSuccess)
             {
@@ -93,69 +125,66 @@ namespace FinalUno
                 return;
             }
 
-                MessageDialog messageDialog;
-                messageDialog = new MessageDialog("Su voto ha sido registrado con éxito.", "Ok");
-                Frame.Navigate(typeof(VotedPage), tokenResponse);
-        }
-
-        private async void BButton_Click(object sender, RoutedEventArgs e)
-        {
-            Response response = await ApiService.PostAsync("Questions", new QuestionRequest
-            {
-                QuestionId = 1,
-                OptionId = 2
-            }, tokenResponse.Token);
-
-            if (!response.IsSuccess)
-            {
-                MessageDialog dialog = new MessageDialog(response.Message, "Error");
-                await dialog.ShowAsync();
-                return;
-            }
-
             MessageDialog messageDialog;
             messageDialog = new MessageDialog("Su voto ha sido registrado con éxito.", "Ok");
-            Frame.Navigate(typeof(VotedPage), tokenResponse);
+            await messageDialog.ShowAsync();
+
         }
 
         private async void CButton_Click(object sender, RoutedEventArgs e)
         {
+            Loader loader = new Loader("Por favor espere...");
+            loader.Show();
             Response response = await ApiService.PostAsync("Questions", new QuestionRequest
             {
                 QuestionId = 1,
                 OptionId = 3
             }, tokenResponse.Token);
+            loader.Close();
 
             if (!response.IsSuccess)
             {
                 MessageDialog dialog = new MessageDialog(response.Message, "Error");
+                if (response.Message == "Usuario ya votó.")
+                {
+                    Frame.Navigate(typeof(VotedPage), tokenResponse);
+                }
                 await dialog.ShowAsync();
                 return;
             }
 
             MessageDialog messageDialog;
             messageDialog = new MessageDialog("Su voto ha sido registrado con éxito.", "Ok");
-            Frame.Navigate(typeof(VotedPage), tokenResponse);
+            await messageDialog.ShowAsync();
+
         }
 
         private async void DButton_Click(object sender, RoutedEventArgs e)
         {
+            Loader loader = new Loader("Por favor espere...");
+            loader.Show();
             Response response = await ApiService.PostAsync("Questions", new QuestionRequest
             {
                 QuestionId = 1,
                 OptionId = 4
             }, tokenResponse.Token);
+            loader.Close();
 
             if (!response.IsSuccess)
             {
                 MessageDialog dialog = new MessageDialog(response.Message, "Error");
+                if (response.Message == "Usuario ya votó.")
+                {
+                    Frame.Navigate(typeof(VotedPage), tokenResponse);
+                }
                 await dialog.ShowAsync();
                 return;
             }
 
             MessageDialog messageDialog;
             messageDialog = new MessageDialog("Su voto ha sido registrado con éxito.", "Ok");
-            Frame.Navigate(typeof(VotedPage), tokenResponse);
+            await messageDialog.ShowAsync();
+
         }
 
 

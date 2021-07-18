@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 
+
 namespace FinalUno.Models
 {
     class QuestionResponse
@@ -11,6 +12,6 @@ namespace FinalUno.Models
         public string Description { get; set; }
 
         [JsonProperty("options")]
-        public Options[] Options { get; set; }
+        public Option[] Options { get; set; }
     }
 }

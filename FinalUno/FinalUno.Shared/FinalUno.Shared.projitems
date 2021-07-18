@@ -28,7 +28,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\LoginRequest.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Options.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Option.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\QuestionRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\QuestionResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Response.cs" />

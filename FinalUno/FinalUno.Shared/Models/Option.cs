@@ -2,7 +2,7 @@
 
 namespace FinalUno.Models
 {
-    class Options
+    class Option
     {
         [JsonProperty("id")]
         public long Id { get; set; }

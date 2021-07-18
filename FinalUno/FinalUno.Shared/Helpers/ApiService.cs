@@ -237,6 +237,8 @@ namespace FinalUno.Helpers
         {
             try
             {
+                string request = JsonConvert.SerializeObject(token);
+                StringContent content = new StringContent(request, Encoding.UTF8, "application/json");
                 HttpClientHandler handler = new HttpClientHandler()
                 {
                     ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
@@ -260,7 +262,7 @@ namespace FinalUno.Helpers
                     };
                 }
 
-                QuestionResponse questionResponse = JsonConvert.DeserializeObject<List<QuestionResponse>>(result[long]);
+                QuestionResponse questionResponse = JsonConvert.DeserializeObject<QuestionResponse>(result);
                 return new Response
                 {
                     IsSuccess = true,
@@ -371,7 +373,7 @@ namespace FinalUno.Helpers
             }
         }
 
-        public static async Task<Response> DeleteAsync(string controller, int id, string token)
+        public static async Task<Response> DeleteAsync(string controller, string token)
         {
             try
             {
@@ -387,7 +389,7 @@ namespace FinalUno.Helpers
                 };
 
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
-                HttpResponseMessage response = await client.DeleteAsync($"api/{controller}/{id}");
+                HttpResponseMessage response = await client.DeleteAsync($"api/{controller}");
                 string result = await response.Content.ReadAsStringAsync();
                 if (!response.IsSuccessStatusCode)
                 {
