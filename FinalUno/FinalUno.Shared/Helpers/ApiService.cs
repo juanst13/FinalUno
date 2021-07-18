@@ -260,11 +260,11 @@ namespace FinalUno.Helpers
                     };
                 }
 
-                List<T> list = JsonConvert.DeserializeObject<List<T>>(result);
+                QuestionResponse questionResponse = JsonConvert.DeserializeObject<List<QuestionResponse>>(result[long]);
                 return new Response
                 {
                     IsSuccess = true,
-                    Result = list,
+                    Result = questionResponse,
                 };
             }
             catch (Exception ex)

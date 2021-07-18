@@ -13,19 +13,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalUno.iOS", "FinalUno\Fi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalUno.UWP", "FinalUno\FinalUno.UWP\FinalUno.UWP.csproj", "{862C07EF-9577-4A0B-81F6-BABB6BD3668B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalUno.Wasm", "FinalUno\FinalUno.Wasm\FinalUno.Wasm.csproj", "{C417F51C-5CAD-4135-98DA-9F561E8A2DCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinalUno.Wasm", "FinalUno\FinalUno.Wasm\FinalUno.Wasm.csproj", "{C417F51C-5CAD-4135-98DA-9F561E8A2DCE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalUno.macOS", "FinalUno\FinalUno.macOS\FinalUno.macOS.csproj", "{448D8C80-F134-4971-A8C3-DECE6242C984}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalUno.Skia.Wpf.Host", "FinalUno\FinalUno.Skia.Wpf.Host\FinalUno.Skia.Wpf.Host.csproj", "{2AD8D26E-789A-4773-A0FC-35B3B71E5E82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinalUno.Skia.Wpf.Host", "FinalUno\FinalUno.Skia.Wpf.Host\FinalUno.Skia.Wpf.Host.csproj", "{2AD8D26E-789A-4773-A0FC-35B3B71E5E82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalUno.Skia.Wpf", "FinalUno\FinalUno.Skia.Wpf\FinalUno.Skia.Wpf.csproj", "{4211F38F-9032-4A7B-966B-21A5A5CE0C01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinalUno.Skia.Wpf", "FinalUno\FinalUno.Skia.Wpf\FinalUno.Skia.Wpf.csproj", "{4211F38F-9032-4A7B-966B-21A5A5CE0C01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalUno.Skia.Gtk", "FinalUno\FinalUno.Skia.Gtk\FinalUno.Skia.Gtk.csproj", "{A5938816-9137-474E-9CAD-CC4D93C67E04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinalUno.Skia.Gtk", "FinalUno\FinalUno.Skia.Gtk\FinalUno.Skia.Gtk.csproj", "{A5938816-9137-474E-9CAD-CC4D93C67E04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalUno.Skia.Tizen", "FinalUno\FinalUno.Skia.Tizen\FinalUno.Skia.Tizen.csproj", "{3DCA1F90-B3C9-4C7A-80E5-CA5EFBB2602B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinalUno.Skia.Tizen", "FinalUno\FinalUno.Skia.Tizen\FinalUno.Skia.Tizen.csproj", "{3DCA1F90-B3C9-4C7A-80E5-CA5EFBB2602B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalUno.Api", "FinalUno.Api\FinalUno.Api.csproj", "{24A366A7-2501-4508-916D-9396807ED0B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinalUno.Api", "FinalUno.Api\FinalUno.Api.csproj", "{24A366A7-2501-4508-916D-9396807ED0B2}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -181,6 +181,7 @@ Global
 		{2AD4DB8B-0AF3-40D5-AF60-8F135493F853}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
 		{2AD4DB8B-0AF3-40D5-AF60-8F135493F853}.Debug|x64.ActiveCfg = Debug|iPhoneSimulator
 		{2AD4DB8B-0AF3-40D5-AF60-8F135493F853}.Debug|x86.ActiveCfg = Debug|iPhoneSimulator
+		{2AD4DB8B-0AF3-40D5-AF60-8F135493F853}.Debug|x86.Build.0 = Debug|iPhoneSimulator
 		{2AD4DB8B-0AF3-40D5-AF60-8F135493F853}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
 		{2AD4DB8B-0AF3-40D5-AF60-8F135493F853}.Release|ARM.ActiveCfg = Release|iPhoneSimulator
 		{2AD4DB8B-0AF3-40D5-AF60-8F135493F853}.Release|ARM64.ActiveCfg = Release|iPhoneSimulator
@@ -356,6 +357,7 @@ Global
 		{448D8C80-F134-4971-A8C3-DECE6242C984}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
 		{448D8C80-F134-4971-A8C3-DECE6242C984}.Debug|x64.ActiveCfg = Debug|iPhoneSimulator
 		{448D8C80-F134-4971-A8C3-DECE6242C984}.Debug|x86.ActiveCfg = Debug|iPhoneSimulator
+		{448D8C80-F134-4971-A8C3-DECE6242C984}.Debug|x86.Build.0 = Debug|iPhoneSimulator
 		{448D8C80-F134-4971-A8C3-DECE6242C984}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
 		{448D8C80-F134-4971-A8C3-DECE6242C984}.Release|ARM.ActiveCfg = Release|iPhoneSimulator
 		{448D8C80-F134-4971-A8C3-DECE6242C984}.Release|ARM64.ActiveCfg = Release|iPhoneSimulator
