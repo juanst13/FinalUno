@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalUno.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,7 +25,17 @@ namespace FinalUno
     {
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
+        }
+
+        public TokenResponse TokenResponse { get; set; }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            /*TokenResponse = (TokenResponse)e.Parameter;
+            WelcomeTextBlock.Text = $"Bienvenid@: {TokenResponse.User.FullName}";
+            MyFrame.Navigate(typeof(CustomersPage));*/
         }
     }
 }
